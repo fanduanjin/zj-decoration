@@ -1,0 +1,38 @@
+
+dubbo:
+  protocol:
+    name: dubbo
+    port: 20888
+  registry:
+    address: zookeeper://192.168.1.24:2181
+  scan:
+    base-packages: cn.fan
+  application:
+    name: server-user
+  config-center:
+    timeout: 30
+spring:
+  main:
+    web-application-type: none
+  redis:
+    host: 192.168.1.24
+    port: 6379
+    jedis:
+      pool:
+        max-active: 100
+        min-idle: 20
+  datasource:
+    druid:
+      url: jdbc:mysql://192.168.1.24:3306/jd_decoraction?
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
+      max-active: 100
+      initial-size: 4
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: cn.fan.model
+  configuration:
+    use-generated-keys: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

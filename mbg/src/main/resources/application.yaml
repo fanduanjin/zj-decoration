@@ -1,0 +1,21 @@
+server:
+  port: 7070
+
+spring:
+  redis:
+    host: 192.168.1.24
+    port: 6379
+  session:
+    store-type: redis
+dubbo:
+  registry:
+    address: zookeeper://192.168.1.24:2181
+  scan:
+    base-packages: cn.fan
+  application:
+    name: mbg
+  protocol:
+    name: dubbo
+    port: 20888
+  config-center:
+    timeout: 30
