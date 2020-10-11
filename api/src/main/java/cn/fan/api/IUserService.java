@@ -1,7 +1,7 @@
 package cn.fan.api;
 
 import cn.fan.core.web.PageInfo;
-import cn.fan.model.User;
+import cn.fan.model.user.User;
 
 import java.util.List;
 

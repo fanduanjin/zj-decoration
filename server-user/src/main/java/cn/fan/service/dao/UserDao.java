@@ -1,11 +1,9 @@
 package cn.fan.service.dao;
 
-import cn.fan.model.User;
+import cn.fan.model.user.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.stereotype.Repository;
 
-import javax.validation.constraints.Pattern;
 import java.util.List;
 
 /**

@@ -1,5 +1,7 @@
 package cn.fan.model;
 
+import lombok.Data;
+
 import java.io.Serializable;
 
 /**
@@ -7,6 +9,7 @@ import java.io.Serializable;
  * @Date 2020/4/30
  * @Create By admin
  */
+@Data
 public class BaseModel  implements Serializable {
     private int id;
 

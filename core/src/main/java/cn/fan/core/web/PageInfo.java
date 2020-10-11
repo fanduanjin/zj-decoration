@@ -11,6 +11,7 @@ public class PageInfo<T> implements Serializable {
     private int currentPage;
     private int pageSize;
     private long pageCount;
+    private long total;
     private T data;
 
     public int getCurrentPage() {
@@ -43,5 +44,13 @@ public class PageInfo<T> implements Serializable {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public long getTotal() {
+        return total;
+    }
+
+    public void setTotal(long total) {
+        this.total = total;
     }
 }

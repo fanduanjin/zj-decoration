@@ -1,10 +1,11 @@
 package cn.fan.vo;
 
-import cn.fan.model.User;
+import cn.fan.model.user.User;
 
 import javax.validation.constraints.NotBlank;
 
 /**
+ * @author admin
  * @Description
  * @Date 2020/5/2
  * @Create By admin

@@ -1,18 +1,21 @@
-package cn.fan.model;
+package cn.fan.model.user;
 
 import cn.fan.core.regexp.RegexpConstans;
+import cn.fan.model.BaseModel;
+import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import java.io.Serializable;
 
 /**
+ * @author admin
  * @Description
  * @Date 2020/4/21
  * @Create By admin
  */
 
-
+@Data
 public class User extends BaseModel {
 
 
@@ -29,35 +32,5 @@ public class User extends BaseModel {
 
     private String headImageUrl;
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getHeadImageUrl() {
-        return headImageUrl;
-    }
-
-    public void setHeadImageUrl(String headImageUrl) {
-        this.headImageUrl = headImageUrl;
-    }
 }

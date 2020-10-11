@@ -1,6 +1,6 @@
 package cn.fan.framework.config.security;
 
-import cn.fan.model.User;
+import cn.fan.model.user.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

@@ -3,7 +3,7 @@
 <mapper namespace="cn.fan.service.dao.UserDao">
     <sql id="col">id,username,password,phoneNumber</sql>
     <sql id="tab">user</sql>
-    <resultMap id="baseResult" type="cn.fan.model.User">
+    <resultMap id="baseResult" type="cn.fan.model.user.User">
         <result column="id" property="id"></result>
         <result column="username" property="userName"></result>
         <result column="password" property="password"></result>
@@ -28,7 +28,7 @@
         where phoneNumber=#{phoneNumber} limit 1;
     </select>
 
-    <select id="getUserByPhoneNumberOrName" resultType="cn.fan.model.User">
+    <select id="getUserByPhoneNumberOrName" resultType="cn.fan.model.user.User">
         select <include refid="col"></include>
         from <include refid="tab"></include>
         <where>
@@ -47,7 +47,7 @@
         from <include refid="tab"></include>
     </select>
 
-    <insert id="insert" parameterType="cn.fan.model.User"  keyColumn="id" keyProperty="id">
+    <insert id="insert" parameterType="cn.fan.model.user.User" keyColumn="id" keyProperty="id">
         insert <include refid="tab"></include>
         (<include refid="col"></include>)
         values(default,#{userName},#{password},#{phoneNumber});
@@ -58,7 +58,7 @@
         where id=#{id};
     </delete>
 
-    <update id="update" parameterType="cn.fan.model.User">
+    <update id="update" parameterType="cn.fan.model.user.User">
         update <include refid="tab"></include>
         <set>
             <if test="null!=userName and userName.length>0">

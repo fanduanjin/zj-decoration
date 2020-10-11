@@ -1,4 +1,4 @@
-import cn.fan.model.User;
+import cn.fan.model.user.User;
 import cn.fan.service.ServerUserApp;
 import cn.fan.service.dao.UserDao;
 import org.junit.Assert;
@@ -7,11 +7,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-
-import java.util.Collections;
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
 
 /**
  * @Description

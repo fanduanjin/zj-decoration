@@ -19,6 +19,7 @@
         <module>server-sms</module>
         <module>framework-redis</module>
         <module>server-common</module>
+        <module>server-goods</module>
     </modules>
 
     <repositories>
@@ -43,8 +44,7 @@
     <properties>
         <spring.boot>2.2.6.RELEASE</spring.boot>
         <mysql>8.0.19</mysql>
-        <revision>2.7.6</revision>
-        <dubbo.version>2.7.6</dubbo.version>
+        <dubbo.version>2.7.3</dubbo.version>
         <amq.pool>5.15.12</amq.pool>
         <jwt>0.9.0</jwt>
         <hutool>4.5.7</hutool>
@@ -139,7 +139,7 @@
             <dependency>
                 <groupId>org.apache.dubbo</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
-                <version>${revision}</version>
+                <version>${dubbo.version}</version>
             </dependency>
 
 
@@ -216,6 +216,8 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+
+
         </dependencies>
     </dependencyManagement>
 
@@ -229,6 +231,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 

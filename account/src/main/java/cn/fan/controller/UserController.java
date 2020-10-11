@@ -3,7 +3,7 @@ package cn.fan.controller;
 import cn.fan.api.IUserService;
 import cn.fan.core.web.HttpResult;
 import cn.fan.core.web.PageInfo;
-import cn.fan.model.User;
+import cn.fan.model.user.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +26,7 @@ public class UserController {
         return httpResult;
     }
 
-    @PostMapping
+    @PutMapping
     HttpResult modify(User user){
         userService.update(user);
         return HttpResult.SUCCESS_RESULT();

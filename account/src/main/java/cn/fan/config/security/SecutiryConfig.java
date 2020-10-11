@@ -35,7 +35,8 @@ public class SecutiryConfig extends WebSecurityConfigurerAdapter {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, // 允许对于网站静态资源的无授权访问
+                // 允许对于网站静态资源的无授权访问
+                .antMatchers(HttpMethod.GET,
                         "/",
                         "/*.html",
                         "/favicon.ico",
@@ -48,7 +49,7 @@ public class SecutiryConfig extends WebSecurityConfigurerAdapter {
                 )
                 .permitAll()
                 .antMatchers("/api/account/login", "/api/account/registry", "/api/account/sendRegistryCode",
-                        "/api/upload")
+                        "//api/common/upload")
                 .permitAll()
                 .antMatchers(HttpMethod.OPTIONS)
                 .permitAll()
@@ -87,6 +88,7 @@ public class SecutiryConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    @Override
     @Bean
     public UserDetailsService userDetailsService() {
         return new SecurityUserDetailService();

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.fan.service.dao.GoodsTypeDao" >
+
+    <sql id="col">id,name</sql>
+    <sql id="tab">goodsType</sql>
+
+    <resultMap id="baseResult" type="cn.fan.model.goods.goodsType.GoodsType">
+        <result column="id" property="id"></result>
+        <result column="name" property="name"></result>
+    </resultMap>
+
+    <select id="getList" resultMap="baseResult">
+        select <include refid="col"></include>
+        from <include refid="tab"></include>
+    </select>
+
+    <insert id="insert" parameterType="cn.fan.model.goods.goodsType.GoodsType">
+        insert <include refid="tab"></include>
+        (<include refid="col"></include>)
+        values(default,#{name});
+    </insert>
+    <update id="update">
+        update <include refid="tab"></include>
+        set name=#{name}
+        where id =#{id}
+    </update>
+    <delete id="delete">
+        delete from <include refid="tab"></include>
+        where id=#{id}
+    </delete>
+</mapper>

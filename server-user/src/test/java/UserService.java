@@ -1,6 +1,6 @@
 import cn.fan.api.IUserService;
 import cn.fan.core.web.PageInfo;
-import cn.fan.model.User;
+import cn.fan.model.user.User;
 import cn.fan.service.ServerUserApp;
 import org.junit.Test;
 import org.junit.runner.RunWith;

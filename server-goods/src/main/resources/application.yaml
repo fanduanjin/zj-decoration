@@ -3,28 +3,18 @@ config:
 dubbo:
   protocol:
     name: dubbo
-    port: 20888
-  registry:
-    address: zookeeper://192.168.1.24:2181
+    port: 20889
   scan:
     base-packages: cn.fan
   application:
-    name: server-user
+    name: server-goods
   config-center:
-    timeout: 30
+    timeout: 10000
+    address: zookeeper://${config.host}:2181
 spring:
-  main:
-    web-application-type: none
-  redis:
-    host: 192.168.1.24
-    port: 6379
-    jedis:
-      pool:
-        max-active: 100
-        min-idle: 20
   datasource:
     druid:
-      url: jdbc:mysql://192.168.1.24:3306/jd_decoraction?
+      url: jdbc:mysql://${config.host}:3306/zj_decoraction?
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver
@@ -37,3 +27,7 @@ mybatis:
   configuration:
     use-generated-keys: true
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    default-enum-type-handler: org.apache.ibatis.type.EnumOrdinalTypeHandler
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
