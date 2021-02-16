@@ -19,36 +19,19 @@ create table goodsType(
 
 create table goodsTypeAttribute(
 	id int UNSIGNED not null auto_increment primary key ,
-	goodsTypeId int UNSIGNED ,
+	goodsTypeId int UNSIGNED not null,
 	name nvarchar(255) not null comment '属性名称',
 	inputMode int UNSIGNED not null,
 	value nvarchar(255) ,
 	selectMode int UNSIGNED not null
 );
 
+create table goodsCategory(
+	id int UNSIGNED not null auto_increment primary key,
+	categoryName nvarchar(255) not null,
+	parentCategoryId INT UNSIGNED not null DEFAULT(0)
 
-
-
-
-select * from goodsTypeAttribute
-
-
-insert goodsType values(DEFAULT,'T恤');
-select * from goodsType
-insert  goodsType          ( id,name )         values(default,'fdfsd');
-
-
-
-
-
-select * from user
-where phoneNumber like '%1336180%'
-
-select count(*) from user;
-
-insert user values(DEFAULT,'43434','sdf33f44','13758755633',null);
-
-select id,username,password,phoneNumber from user LIMIT 1,2
+);
 
 
 

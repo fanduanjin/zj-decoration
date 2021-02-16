@@ -56,6 +56,10 @@
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
 
-
+        <dependency>
+            <groupId>com.github.tobato</groupId>
+            <artifactId>fastdfs-client</artifactId>
+            <version>${fastdfs}</version>
+        </dependency>
     </dependencies>
 </project>
